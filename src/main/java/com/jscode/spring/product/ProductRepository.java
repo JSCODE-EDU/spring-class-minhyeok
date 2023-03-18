@@ -13,9 +13,6 @@ public class ProductRepository {
         this.products.add(product);
     }
 
-    public void setId(int id){
-    }
-
     // 전체 상품을 조회하는 메소드
     public List<Product> findAll() {
         return products;
