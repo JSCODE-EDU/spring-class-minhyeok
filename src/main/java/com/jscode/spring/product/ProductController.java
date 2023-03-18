@@ -25,8 +25,8 @@ public class ProductController {
     }
 
     //@GetMapping(params = "id")
-    @GetMapping(value = "", params = "id")
-    public Product findOne(@RequestParam Integer id) {
-        return productService.findOne(id);
+    @GetMapping(value = "", params = "name")
+    public Product findOne(@RequestParam String name) {
+        return productService.findOne(name);
     }
 }

@@ -22,17 +22,14 @@ public class ProductRepository {
     }
 
     // 특정 상품을 조회하는 메소드
-    public Product findOne(Integer id) {
-        return products.get(id);
-        //이름으로 입력받을때 상세조회?
-        /*for (Product product : products) {
+    public Product findOne(String name) {
+        //return products.get(id);
+        //이름으로 입력받을때 상세조회
+        for (Product product : this.products) {
             if(product.getName().equals(name)) {
-            return product;
-                //System.out.println(
-                    /*product.getName() + " 상품이고, 가격은 " + product.getPrice()
-                        + "이고, ID는 " + product.getID() + " 입니다.");
                 return product;
             }
-        }*/
+        }
+        return null;
     }
 }

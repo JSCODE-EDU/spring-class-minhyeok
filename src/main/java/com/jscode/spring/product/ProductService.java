@@ -18,8 +18,8 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public Product findOne(Integer id) {
-        return productRepository.findOne(id);
+    public Product findOne(String name) {
+        return productRepository.findOne(name);
     }
     public void saveProduct(Product product) {
         productRepository.saveProduct(product);
