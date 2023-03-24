@@ -33,9 +33,10 @@ public class ProductController {
     }
 
     @GetMapping(value = "", params = "name")
-    public Product findOneByName(@RequestParam String name) {
-        return productService.findOneByName(name);
+    public List<ProductEntity> findByName(@RequestParam String name) {
+        return productService.findByName(name);
     }
+
     @GetMapping(params = "id")
     public Optional<ProductEntity> findOneById(@RequestParam Long id) {
         return productService.findOneById(id);
