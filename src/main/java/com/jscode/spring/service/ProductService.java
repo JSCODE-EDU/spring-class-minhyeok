@@ -27,11 +27,11 @@ public class ProductService {
         return productJpaRepository.findAll();
     }
 
-    public Product findOneByName(String name) {
-        return productRepository.findOneByName(name);
+    public List<ProductEntity> findByName(String name) {
+        return productJpaRepository.findByName(name);
     }
 
-    public Optional<ProductEntity> findOneById(Long id){
+    public Optional<ProductEntity> findOneById(Long id) {
         return productJpaRepository.findById(id);
     }
 
