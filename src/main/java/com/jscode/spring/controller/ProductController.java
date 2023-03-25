@@ -22,23 +22,24 @@ public class ProductController {
         return productService.findAll();
     }
 
-    //    @PostMapping("")
-//    public void save(@RequestBody Product product){
-//        productService.save(product);
-//    }
     @PostMapping("")
     public String saveProduct(@RequestBody ProductEntity productEntity) {
         productService.save(productEntity);
         return "정상 저장됐습니다.";
     }
 
-    @GetMapping(value = "", params = "name")
-    public List<ProductEntity> findByName(@RequestParam String name) {
-        return productService.findByName(name);
-    }
-
     @GetMapping(params = "id")
     public Optional<ProductEntity> findOneById(@RequestParam Long id) {
         return productService.findOneById(id);
+    }
+
+    @GetMapping(params = "price")
+    public List<ProductEntity> findByPrice(@RequestParam Long price) {
+        return productService.findByPrice(price);
+    }
+
+    @GetMapping(value = "", params = "name")
+    public List<ProductEntity> findByName(@RequestParam String name) {
+        return productService.findByName(name);
     }
 }
