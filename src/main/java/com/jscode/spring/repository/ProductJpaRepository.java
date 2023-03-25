@@ -8,8 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 public interface ProductJpaRepository extends JpaRepository<ProductEntity, Long> {
 
     List<ProductEntity> findByName(String name);
-//    @Query(value = "select price " +
-//        "from ProductEntity productentity " +
-//        "order by ")
-    List<ProductEntity> findByPrice(Long price);
+
+    List<ProductEntity> findByPriceOrderByNameDesc(Long price);
+
 }

@@ -39,7 +39,7 @@ public class ProductService {
         return productJpaRepository.findByName(name);
     }
 
-    public List<ProductEntity> findByPrice(Long price) {
-        return productJpaRepository.findByPrice(price);
+    public List<ProductEntity> findByPriceOrderByNameDesc(Long price) {
+        return productJpaRepository.findByPriceOrderByNameDesc(price);
     }
 }

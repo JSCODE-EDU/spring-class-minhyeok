@@ -34,8 +34,8 @@ public class ProductController {
     }
 
     @GetMapping(params = "price")
-    public List<ProductEntity> findByPrice(@RequestParam Long price) {
-        return productService.findByPrice(price);
+    public List<ProductEntity> findByPriceOrderByNameDesc(@RequestParam Long price) {
+        return productService.findByPriceOrderByNameDesc(price);
     }
 
     @GetMapping(value = "", params = "name")
