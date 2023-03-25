@@ -33,13 +33,18 @@ public class ProductController {
         return productService.findOneById(id);
     }
 
+    @GetMapping(value = "", params = "name")
+    public List<ProductEntity> findByName(@RequestParam String name) {
+        return productService.findByName(name);
+    }
+
     @GetMapping(params = "price")
     public List<ProductEntity> findByPriceOrderByNameDesc(@RequestParam Long price) {
         return productService.findByPriceOrderByNameDesc(price);
     }
 
-    @GetMapping(value = "", params = "name")
-    public List<ProductEntity> findByName(@RequestParam String name) {
-        return productService.findByName(name);
+    @GetMapping(params= {"name","price"})
+    public List<ProductEntity> findByNameAndPrice(@RequestParam String name,@RequestParam Long price) {
+        return productService.findByNameAndPrice(name, price);
     }
 }

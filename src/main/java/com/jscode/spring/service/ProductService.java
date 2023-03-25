@@ -42,4 +42,8 @@ public class ProductService {
     public List<ProductEntity> findByPriceOrderByNameDesc(Long price) {
         return productJpaRepository.findByPriceOrderByNameDesc(price);
     }
+
+    public List<ProductEntity> findByNameAndPrice(String name, Long price) {
+        return productJpaRepository.findByNameAndPrice(name, price);
+    }
 }
