@@ -27,10 +27,6 @@ public class ProductService {
         return productJpaRepository.findAll();
     }
 
-    public List<ProductEntity> findByName(String name) {
-        return productJpaRepository.findByName(name);
-    }
-
     public Optional<ProductEntity> findOneById(Long id) {
         return productJpaRepository.findById(id);
     }
@@ -39,4 +35,15 @@ public class ProductService {
         productJpaRepository.save(productEntity);
     }
 
+    public List<ProductEntity> findByName(String name) {
+        return productJpaRepository.findByName(name);
+    }
+
+    public List<ProductEntity> findByPriceOrderByNameDesc(Long price) {
+        return productJpaRepository.findByPriceOrderByNameDesc(price);
+    }
+
+    public List<ProductEntity> findByNameAndPrice(String name, Long price) {
+        return productJpaRepository.findByNameAndPrice(name, price);
+    }
 }
