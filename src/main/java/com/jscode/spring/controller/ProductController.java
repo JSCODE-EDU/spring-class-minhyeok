@@ -43,8 +43,9 @@ public class ProductController {
         return productService.findByPriceOrderByNameDesc(price);
     }
 
-    @GetMapping(params= {"name","price"})
-    public List<ProductEntity> findByNameAndPrice(@RequestParam String name,@RequestParam Long price) {
+    @GetMapping(params = {"name", "price"}) // params 에서는 {} 안에 "" 로 분류한다!!
+    public List<ProductEntity> findByNameAndPrice(@RequestParam String name,
+        @RequestParam Long price) {
         return productService.findByNameAndPrice(name, price);
     }
 }
