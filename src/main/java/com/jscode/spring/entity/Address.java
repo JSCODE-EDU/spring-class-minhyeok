@@ -11,4 +11,13 @@ public class Address {
     public Address(){
 
     }
+
+    //Getter를 생성해주어야 한다!
+    public String getAddress1() {
+        return address1;
+    }
+
+    public String getAddressDetail() {
+        return addressDetail;
+    }
 }

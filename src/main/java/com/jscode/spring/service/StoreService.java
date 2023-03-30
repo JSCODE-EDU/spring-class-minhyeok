@@ -22,9 +22,7 @@ public class StoreService {
     }
 
     public void save(StoreEntity storeEntity) {
-        System.out.println("서비스1");
         storeJpaRepository.save(storeEntity);
-        System.out.println("서비스2");
     }
 
     public Optional<StoreEntity> findById(Long id) {

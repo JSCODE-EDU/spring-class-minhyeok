@@ -23,9 +23,7 @@ public class StoreController {
 
     @PostMapping("")
     public String saveStore(@RequestBody StoreEntity storeEntity) {
-        System.out.println("컨트롤러1");
         storeService.save(storeEntity);
-        System.out.println("컨트롤러2");
         return "store 정상 저장되었습니다.";
     }
 
