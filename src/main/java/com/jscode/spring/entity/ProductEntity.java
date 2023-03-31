@@ -19,6 +19,9 @@ public class ProductEntity {
 
     }
 
+/*    @ManyToOne(fetch = FetchType.EAGER)
+    private StoreEntity storeEntity;*/
+
     public Long getId() {
         return id;
     }
@@ -30,4 +33,8 @@ public class ProductEntity {
     public Long getPrice() {
         return price;
     }
+//
+//    public void updateStore(StoreEntity storeEntity){
+//        this.storeEntity = storeEntity;
+//    }
 }

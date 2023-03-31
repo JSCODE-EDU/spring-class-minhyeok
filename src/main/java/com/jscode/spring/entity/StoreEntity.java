@@ -1,5 +1,7 @@
 package com.jscode.spring.entity;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.*;
 
 @Table(name = "store_entity")
@@ -23,9 +25,24 @@ public class StoreEntity {
     public StoreEntity() {
 
     }
+    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private List<ProductEntity> productEntity;
 
     public Long getId() {
         return id;
+    }
+
+    public List<ProductEntity> getProductEntity() {
+        return productEntity;
+    }
+
+    public void setProductEntity(List<ProductEntity> productEntity) {
+        this.productEntity = productEntity;
+    }
+
+    public void addProduct(ProductEntity productEntity){
+        this.productEntity.add(productEntity);
+        //productEntity.updateStore(this);
     }
 
     public String getName() {
