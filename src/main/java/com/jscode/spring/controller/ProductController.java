@@ -22,14 +22,15 @@ public class ProductController {
         return productService.findAll();
     }
 
-    //    @PostMapping("")
-//    public void save(@RequestBody Product product){
-//        productService.save(product);
-//    }
     @PostMapping("")
     public String saveProduct(@RequestBody ProductEntity productEntity) {
         productService.save(productEntity);
         return "정상 저장됐습니다.";
+    }
+
+    @GetMapping(params = "id")
+    public Optional<ProductEntity> findOneById(@RequestParam Long id) {
+        return productService.findOneById(id);
     }
 
     @GetMapping(value = "", params = "name")
@@ -37,8 +38,14 @@ public class ProductController {
         return productService.findByName(name);
     }
 
-    @GetMapping(params = "id")
-    public Optional<ProductEntity> findOneById(@RequestParam Long id) {
-        return productService.findOneById(id);
+    @GetMapping(params = "price")
+    public List<ProductEntity> findByPriceOrderByNameDesc(@RequestParam Long price) {
+        return productService.findByPriceOrderByNameDesc(price);
+    }
+
+    @GetMapping(params = {"name", "price"}) // params 에서는 {} 안에 "" 로 분류한다!!
+    public List<ProductEntity> findByNameAndPrice(@RequestParam String name,
+        @RequestParam Long price) {
+        return productService.findByNameAndPrice(name, price);
     }
 }
